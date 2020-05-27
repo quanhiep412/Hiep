@@ -10,8 +10,8 @@
         state: present
       with_items:
         - { lbid: 2, ip: 1 }
-        - { lbid: 3, ip: 1 }
-        - { lbid: 4, ip: 1 }
+        - { lbid: 3, ip: 2 }
+        - { lbid: 4, ip: 3 }
     #Xem lại tất cả các cổng
     - name: Show ip
       ios_command: # Viết lệnh để gửi ở mode command line của router
