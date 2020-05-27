@@ -6,12 +6,12 @@
     - name: Set loopback IPv4 address # Đặt tên task để quản lý
       ios_l3_interface: # do cấu hình router nên bắt buộc khai báo như vậy
         name:loopback {{ item.lbid }} # tên cổng
-        ipv4: "{{ item.ip }}" # địa chỉ IP của loopback
+        ipv4: 10.0.{{ item.ip }}.1/24 # địa chỉ IP của loopback
 
     with_items:
-        - { lbid: 2, ip: 10.0.1.1/24 }
-        - { lbid: 3, ip: 10.0.2.1/24 }
-        - { lbid: 4, ip: 10.0.3.1/24 }
+        - { lbid: 2, ip: 1 }
+        - { lbid: 3, ip: 1 }
+        - { lbid: 4, ip: 1 }
     #Xem lại tất cả các cổng
     - name: Show ip
       ios_command: # Viết lệnh để gửi ở mode command line của router
